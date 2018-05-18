@@ -5,7 +5,7 @@ from database_setup import Base, Room, Item
 
 app = Flask(__name__)
 
-engine = create_engine('postgresql:///itemcatalog.db')
+engine = create_engine('sqlite:///ItemCatalog.db')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)

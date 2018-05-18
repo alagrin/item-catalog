@@ -23,5 +23,5 @@ class Item(Base):
     room_id = Column(Integer, ForeignKey('room.id'))
     room = relationship(Room)
 
-engine = create_engine('postgresql:///itemcatalog.db')
+engine = create_engine('sqlite:///ItemCatalog.db')
 Base.metadata.create_all(engine)
