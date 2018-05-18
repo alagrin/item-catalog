@@ -1,13 +1,17 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, flash
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from database_setup import Base, Room, Item
 
 app = Flask(__name__)
-app.config[...] = database typeof
-db = ...(app)...
 
-# Database model...
+engine = create_engine('postgresql:///itemcatalog.db')
+Base.metadata.bind = engine
 
-# Set up homepage at index.html
+DBSession = sessionmaker(bind=engine)
+session = DBSession()
+
 
 if __name__ == '__main__':
     app.debug = True
-    app.run()
+    app.run(host='0.0.0.0', port=8001)
