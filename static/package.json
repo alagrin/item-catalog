@@ -4,7 +4,16 @@
   "description": "item catalog app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack -p --progress --config webpack.config.js",
+    "dev-build": "webpack -p --progress --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack -p --progress --config webpack.config.js --watch"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "env"
+    ]
   },
   "keywords": [
     "item",
@@ -17,6 +26,11 @@
   "author": "Alan Grinberg",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^4.8.3"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
   }
 }
